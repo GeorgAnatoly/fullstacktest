@@ -1,10 +1,7 @@
-FROM alpine:latest
+FROM openjdk:11
 
-RUN apk update
-RUN apk add curl
+COPY target/fullstackdemo-0.0.1.jar .
 
-RUN mkdir -p /opt/java
+EXPOSE 8080
 
-RUN curl -L -b "oraclelicense=a" http://download.oracle.com/otn-pub/java/jdk/11.0.2+9/f51449fcd52f4d52b93a989c5c56ed3c/jdk-11.0.2_linux-x64_bin.tar.gz -O
-
-RUN mv /jdk-11.0.2_linux-x64_bin.tar.gz /opt/java
+ENTRYPOINT ["java", "-jar", "fullstackdemo-0.0.1.jar"]
