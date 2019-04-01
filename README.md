@@ -5,12 +5,12 @@ via GCP with native-like offline functionality and two
 user experiences; user and admin.
 
 ### Built Using:
-  * Spring/Thymeleaf/JPA back end
-  * React/Three.js front end
+  * Spring based server application
+  * React based client pwa
   
 ### Deployment
 Strategy is to package the production ready react app
-in a Thymeleaf frontend handler, package that as a
+and a simple frontend controller as a
 containerized jar and deploy as a pod on a gcp kubernetes
 cluster.
 
